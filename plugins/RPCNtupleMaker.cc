@@ -8,6 +8,7 @@
 #include "RPCAnalysis/RPCNtupleMaker/plugins/RPCNtupleMaker.h"
 #include "RPCAnalysis/RPCNtupleMaker/interface/RPCNtupleEventFiller.h"
 #include "RPCAnalysis/RPCNtupleMaker/interface/RPCNtupleDigiFiller.h"
+#include "RPCAnalysis/RPCNtupleMaker/interface/RPCNtupleRecHitFiller.h"
 #include "RPCAnalysis/RPCNtupleMaker/interface/RPCNtupleConfig.h"
 
 RPCNtupleMaker::RPCNtupleMaker(const edm::ParameterSet & config){
