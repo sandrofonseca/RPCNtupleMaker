@@ -84,7 +84,6 @@ void RPCNtupleRecHitFiller::fill(const edm::Event & ev)
 
     clear();
 
-    std::cout << "Retriving RPCRecHitCollection" << std::endl;
     auto rpcRecHits = conditionalGet<RPCRecHitCollection>(ev, m_rpcRecHitToken, "RPCRecHitCollection");
     if(rpcRecHits.isValid()){
         for (RPCRecHitCollection::const_iterator recHitIt = rpcRecHits->begin(); recHitIt != rpcRecHits->end(); recHitIt++) {

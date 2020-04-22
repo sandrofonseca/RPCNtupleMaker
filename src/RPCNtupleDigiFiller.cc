@@ -76,7 +76,6 @@ void RPCNtupleDigiFiller::fill(const edm::Event & ev)
 
     clear();
 
-    std::cout << "Retriving RPCDigiCollection" << std::endl;
     auto rpcDigis = conditionalGet<RPCDigiCollection>(ev, m_rpcDigiToken, "RPCDigiCollection");
     //edm::Handle<RPCDigiCollection> rpcDigis;
     //ev.getByLabel(m_rpcDigiLabel, rpcDigis);
