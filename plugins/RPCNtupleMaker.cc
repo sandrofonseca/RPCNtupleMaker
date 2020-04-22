@@ -17,7 +17,12 @@ RPCNtupleMaker::RPCNtupleMaker(const edm::ParameterSet & config){
     m_config = std::make_shared<RPCNtupleConfig>(RPCNtupleConfig(config));
 
     m_fillers.push_back(std::make_unique<RPCNtupleEventFiller>(consumesCollector(), m_config, m_tree, "event"));
-    m_fillers.push_back(std::make_unique<RPCNtupleDigiFiller>(consumesCollector(), m_config, m_tree, "digi"));
+    if (m_config->m_storeRpcDigis){
+        m_fillers.push_back(std::make_unique<RPCNtupleDigiFiller>(consumesCollector(), m_config, m_tree, "digi"));
+    }
+    if (m_config->m_storeRpcRecHits){
+        m_fillers.push_back(std::make_unique<RPCNtupleRecHitFiller>(consumesCollector(), m_config, m_tree, "recHit"));
+    }
 }
 
 void RPCNtupleMaker::beginJob() 

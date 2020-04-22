@@ -34,11 +34,9 @@ class RPCNtupleConfig
   /// Map containing different input tags
   std::map<std::string, edm::InputTag> m_inputTags;
 
-//  /// The class to perform DT local trigger coordinate conversions
-//  std::unique_ptr<DTTrigGeomUtils> m_trigGeomUtils;
-//
-//  /// Handle to the tracking geometry
-//  edm::ESHandle<GlobalTrackingGeometry> m_trackingGeometry;
+  // Options from cfg
+  bool m_storeRpcDigis, m_storeRpcRecHits;
+
 
   /// Handle to the DT geometry
   edm::ESHandle<RPCGeometry> m_rpcGeometry;

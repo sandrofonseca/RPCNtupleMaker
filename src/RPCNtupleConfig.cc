@@ -15,7 +15,9 @@ RPCNtupleConfig::RPCNtupleConfig(const edm::ParameterSet & config)
   edm::InputTag none = edm::InputTag("none");
 
   m_inputTags["rpcDigiLabel"] = config.getUntrackedParameter<edm::InputTag>("rpcDigiLabel", none);
+  m_storeRpcDigis = config.getUntrackedParameter<bool>("storeRpcDigis");
   m_inputTags["rpcRecHitLabel"] = config.getUntrackedParameter<edm::InputTag>("rpcRecHitLabel", none);
+  m_storeRpcRecHits = config.getUntrackedParameter<bool>("storeRpcRecHits");
 
 }
 
